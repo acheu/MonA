@@ -13,12 +13,13 @@ while(True): #main body loop function
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
 
-    folder = '/home/chewie/Videos/webcamFeed-Dragon/' #location of output files 
+    # folder = '/home/chewie/Videos/webcamFeed-Dragon/' #location of output files 
+    folder = '/mona/readyshare/webcamFeed/' #Mounted NAS 
     framePrev = 0
     firstFrame = []
     movementFlag = False
     min_area = 100
-    holdTime = 10 #Seconds
+    holdTime = 20 #Seconds
     triggerTime = 0
 
     while(cap.isOpened()):    
@@ -27,7 +28,7 @@ while(True): #main body loop function
             
             # Convert to grayscale and smooth
             frameR = imutils.resize(frame, width=500)
-            gray = cv2.cvtColor(frameR, cv2.COLOR_BGR2GRAY)
+	    gray = cv2.cvtColor(frameR, cv2.COLOR_BGR2GRAY)
             gray = cv2.GaussianBlur(gray,(21,21),0)
 
             if firstFrame == []:
@@ -46,7 +47,7 @@ while(True): #main body loop function
                     if cv2.contourArea(c) > min_area and movementFlag == False:
                         movementFlag = True
                         outFile = folder + str(int(time.time())) + '.avi'
-                        out = cv2.VideoWriter(outFile,fourcc, 30.0, (640,480))
+                        out = cv2.VideoWriter(outFile,fourcc, 5.0, (640,480))
                         triggerTime = time.time()
                         break
                     else:
