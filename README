@@ -9,3 +9,8 @@ The goal is to add as many features and functionality
 to a microcontroller such as security footage. 
 
 Needs OpenCV
+
+--For Network Attached Storage
+
+crontab -e
+mount -t cifs -o username=[user of router],password=[password of router],sec=ntlm //192.168.1.1/USB_Storage /mona/readyshare
