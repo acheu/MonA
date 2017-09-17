@@ -8,6 +8,14 @@ This is a home-brew security project by Alex Cheu.
 The goal is to add as many features and functionality 
 to a microcontroller such as security footage. 
 
+<<<<<<< HEAD
+Needs OpenCV
+
+--For Network Attached Storage
+
+crontab -e
+mount -t cifs -o username=[user of router],password=[password of router],sec=ntlm //192.168.1.1/USB_Storage /mona/readyshare
+=======
 ##Commands for installing MonA
 
 #Get OpenCV
@@ -30,3 +38,4 @@ mount -t cifs -o username=admin,password=***,sec=ntlm //192.168.1.1/USB_Storage 
 
 
 http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/
+>>>>>>> 81b6d7c0f3a6f59f297952606c1314c6dc1d0fa2
