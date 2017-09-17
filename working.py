@@ -8,20 +8,20 @@ import time
 
 while(True): #main body loop function 
 
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
 
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
 
-    folder = '/home/chewie/Videos/webcamFeed-Dragon/' #location of output files 
+    #folder = '/home/chewie/Videos/webcamFeed-Dragon/' #location of output files 
+    folder = '/home/chewie/Downloads/'
     framePrev = 0
     firstFrame = []
     movementFlag = False
     min_area = 100
     holdTime = 10 #Seconds
     triggerTime = 0
-
-    while(cap.isOpened()):    
+    while(cap.isOpened()):
         ret, frame = cap.read()
         if ret==True:
             
